@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getDoc, collection, doc } from "firebase/firestore";
-import { db } from "../../../firebaseConfig";
+import { db } from "../../../firebaseconfig";
 import Detalles from "./Detalles";
 import CartContext from "../../../contexto/CartContext";
 

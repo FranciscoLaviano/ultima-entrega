@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 //import { products } from "../../../productsMock"
-import { db } from "/../../../firebaseconfig.js";
+import { db } from "../../../firebaseconfig";
 import { addDoc, collection } from "@firebase/firestore";
 
 const Dashboard = () => {
