@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-//import { products } from "../../../productsMock"
+import { productos } from "../../../catalogo/productosMock.js";
 import { db } from "../../../firebaseconfig";
 import { addDoc, collection } from "@firebase/firestore";
 

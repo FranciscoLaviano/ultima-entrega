@@ -1,4 +1,4 @@
-export const products = [
+export const productos = [
   {
     id: 1,
     title: "Andriod 12.0",

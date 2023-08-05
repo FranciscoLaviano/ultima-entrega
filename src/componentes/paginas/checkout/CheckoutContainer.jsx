@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+
 import { CartContext } from "../../../contexto/CartContext";
 import { db } from "../../../firebaseconfig";
 import {
@@ -11,7 +12,7 @@ import {
 import { Button } from "@mui/material";
 
 const CheckoutContainer = () => {
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { carro, precioGeneral } = useContext(CartContext);
 
   const [orderId, setOrderId] = useState("");
 
@@ -20,7 +21,7 @@ const CheckoutContainer = () => {
     phone: "",
     email: "",
   });
-  let total = getTotalPrice();
+  let total = precioGeneral();
 
   const handleSubmit = (evento) => {
     evento.preventDefault();
@@ -38,8 +39,8 @@ const CheckoutContainer = () => {
     addDoc(ordersCollections, order).then((res) => setOrderId(res.id));
 
     // MODIFICAR TODOS LOS PRODUCTOS EN SU STOCK
-    cart.forEach((elemento) => {
-      updateDoc(doc(db, "products", elemento.id), {
+    carro.forEach((elemento) => {
+      updateDoc(doc(db, "productos", elemento.id), {
         stock: elemento.stock - elemento.quantity,
       });
     });
