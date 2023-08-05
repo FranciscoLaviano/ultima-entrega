@@ -1,5 +1,5 @@
 import { Badge } from "@mui/material";
-
+import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCheckoutOutlined";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../contexto/CartContext";
@@ -11,7 +11,7 @@ const cartWidget = () => {
   return (
     <Link to="/carro" style={{ color: "green" }}>
       <Badge badgeContent={g} color="primary" showZero>
-        {/* <ShoppingCartIcon color="main" sx={{ fontSize: 45 }} />*/}
+        <ShoppingCartCheckoutOutlinedIcon color="main" sx={{ fontSize: 45 }} />
       </Badge>
     </Link>
   );

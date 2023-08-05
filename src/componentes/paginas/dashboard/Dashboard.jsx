@@ -6,7 +6,7 @@ import { addDoc, collection } from "@firebase/firestore";
 const Dashboard = () => {
   const rellenar = () => {
     let refCollection = collection(db, "productos");
-    products.forEach((prod) => {
+    productos.forEach((prod) => {
       addDoc(refCollection, prod);
     });
   };
