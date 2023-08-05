@@ -64,7 +64,7 @@ const ComponentesParaContexto = ({ children }) => {
     return prd?.quantity;
   };
 
-  let datos = {
+  let data = {
     carro,
     AgregarAlCarro,
     limpiarCarro,
@@ -74,7 +74,7 @@ const ComponentesParaContexto = ({ children }) => {
     cantidadesPorId,
   };
 
-  return <CartContext.Provider value={datos}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
 export default ComponentesParaContexto;
