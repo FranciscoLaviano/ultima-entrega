@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const CarroContenedor = () => {
-  const { cart, clearCart, deleteById, getTotalPrice } =
+  const { carro, limpiarCarro, eliminarPorId, precioGeneral } =
     useContext(CartContext);
 
   let limpiar = () => {
@@ -17,7 +17,7 @@ const CarroContenedor = () => {
       denyButtonText: `No, no limpiar`,
     }).then((result) => {
       if (result.isConfirmed) {
-        clearCart();
+        limpiarCarro();
         Swal.fire("Carrito eliminado con exito", "", "success");
       } else if (result.isDenied) {
         Swal.fire("El carrito queda como estaba", "", "info");
@@ -25,12 +25,12 @@ const CarroContenedor = () => {
     });
   };
 
-  let total = getTotalPrice();
+  let total = precioGeneral();
   return (
     <div>
       <h1>Estoy en el carrito</h1>
 
-      {cart.map((elemento) => {
+      {carro.map((elemento) => {
         return (
           <div
             key={elemento.id}
@@ -39,14 +39,17 @@ const CarroContenedor = () => {
             <h3>{elemento.title}</h3>
             <h3>{elemento.price}</h3>
             <h4>Cantidad: {elemento.quantity}</h4>
-            <Button variant="contained" onClick={() => deleteById(elemento.id)}>
+            <Button
+              variant="contained"
+              onClick={() => eliminarPorId(elemento.id)}
+            >
               Eliminar
             </Button>
           </div>
         );
       })}
 
-      {cart.length > 0 && (
+      {carro.length > 0 && (
         <>
           <Button variant="outlined" onClick={limpiar}>
             Limpiar carrito

@@ -1,16 +1,11 @@
 import { useState } from "react";
 import Contador from "./contador";
 
-const CarroContador = ({ AgregarAlCarro, stock, CantidadEnCarro = 1 }) => {
+const CarroContador = ({ ac, stock, CantidadEnCarro = 1 }) => {
   const [cuenta, setCuenta] = useState(CantidadEnCarro);
 
   return (
-    <Contador
-      cuenta={cuenta}
-      setCuenta={setCuenta}
-      AgregarAlCarrito={AgregarAlCarro}
-      stock={stock}
-    />
+    <Contador cuenta={cuenta} setCuenta={setCuenta} ac={ac} stock={stock} />
   );
 };
 

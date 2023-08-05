@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 
-const Contador = (cuenta, setCuenta, AgregarAlCarro, stock) => {
+const Contador = (cuenta, setCuenta, ac, stock) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -22,11 +22,7 @@ const Contador = (cuenta, setCuenta, AgregarAlCarro, stock) => {
       </div>
       <br />
 
-      <Button
-        variant="contained"
-        color="secondary"
-        onClick={() => AgregarAlCarro(cuenta)}
-      >
+      <Button variant="contained" color="secondary" onClick={() => ac(cuenta)}>
         Agregar al carrito
       </Button>
     </div>

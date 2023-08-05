@@ -5,26 +5,26 @@ import "react-toastify/dist/ReactToastify.css";
 import { getDoc, collection, doc } from "firebase/firestore";
 import { db } from "../../../firebaseconfig";
 import Detalles from "./Detalles";
-import CartContext from "../../../contexto/CartContext";
+import { CartContext } from "../../../contexto/CartContext";
 
 const DetalleProductos = () => {
-  const [producto, setProducto] = useState({});
+  const [product, setProduct] = useState({});
   let id = useParams();
-  const { AgregarAlCarro, cantidadesPorId } = useContext(CartContext);
-  let productosDeLCarro = cantidadesPorId(id);
+  const { AgregarAlCarro, cantidadTotal } = useContext(CartContext);
+  let productosDelCarro = cantidadTotal(id);
 
   useEffect(() => {
-    let rc = collection(db, "productos");
-    let rd = doc(rc, id);
-    getDoc(rd).then((s) => setProducto({ ...s.datos(), id: s.id }));
+    let refCollection = collection(db, "productos");
+    let refDoc = doc(refCollection, id);
+    getDoc(refDoc).then((res) => setProduct({ ...res.data(), id: res.id }));
   }, [id]);
 
   const ac = (c) => {
-    let datos = {
-      ...producto,
-      quantity: cantidad,
+    let data = {
+      ...product,
+      quantity: c,
     };
-    AgregarAlCarro();
+    AgregarAlCarro(data);
 
     toast.success("Producto agregado", {
       position: "top-right",
@@ -41,9 +41,9 @@ const DetalleProductos = () => {
   return (
     <>
       <Detalles
-        producto={producto}
-        AgregarAlCarro={AgregarAlCarro}
-        productosDeLCarro={productosDeLCarro}
+        producto={product}
+        ac={ac}
+        productosDelCarro={productosDelCarro}
       />
       <ToastContainer />
     </>

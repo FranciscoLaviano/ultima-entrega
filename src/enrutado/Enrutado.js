@@ -22,8 +22,8 @@ export const routes = [
     Element: DetalleProductos,
   },
   {
-    id: "cart",
-    path: "/cart",
+    id: "carro",
+    path: "/carro",
     Element: CarroContenedor,
   },
   {
