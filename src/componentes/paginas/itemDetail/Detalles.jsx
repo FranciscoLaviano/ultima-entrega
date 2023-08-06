@@ -1,6 +1,6 @@
 import CarroContador from "../../comunes/contador/CarroContador";
 
-const Detalles = ({ producto, AgregarAlCarro, cantidadEnCarro = 1 }) => {
+const Detalles = ({ producto, AgregarAlCarro, cantidadEnCarro }) => {
   <div>
     return (<h1>{producto.title}</h1>
     <h2>{producto.price}</h2>

@@ -9,7 +9,7 @@ import { CartContext } from "../../../contexto/CartContext";
 
 const DetalleProductos = () => {
   const [product, setProduct] = useState({});
-  let id = useParams();
+  let { id } = useParams();
   const { AgregarAlCarro, cantidadTotal } = useContext(CartContext);
   let productosDelCarro = cantidadTotal(id);
 
@@ -42,8 +42,8 @@ const DetalleProductos = () => {
     <>
       <Detalles
         producto={product}
-        ac={ac}
-        productosDelCarro={productosDelCarro}
+        AgregarAlCarro={ac}
+        cantidadEnCarro={productosDelCarro}
       />
       <ToastContainer />
     </>
