@@ -60,7 +60,7 @@ const CarroContenedor = () => {
         </>
       )}
 
-      <h2>El total del carrito es : {total} </h2>
+      <h2>El total del carrito es : $ {total} </h2>
     </div>
   );
 };
