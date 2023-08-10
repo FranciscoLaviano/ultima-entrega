@@ -5,7 +5,7 @@ const CarroContador = ({ ac, stock, CantidadEnCarro = 1 }) => {
   const [cuenta, setCuenta] = useState(CantidadEnCarro);
 
   return (
-    <Contador cuenta={cuenta} setCuenta={setCuenta} ac={ac} stock={stock} />
+    <Contador cuenta={cuenta} setCuenta={setCuenta} aC={ac} stock={stock} />
   );
 };
 

@@ -15,9 +15,7 @@ const ComponentesParaContexto = ({ children }) => {
             quantity: producto.quantity,
           };
         } else {
-          return {
-            el,
-          };
+          return el;
         }
       });
 
@@ -49,11 +47,11 @@ const ComponentesParaContexto = ({ children }) => {
   //Precio general de la compra
 
   const precioGeneral = () => {
-    let costo = carro.reduce((acm, el) => {
+    let total = carro.reduce((acm, el) => {
       return acm + el.price * el.quantity;
     }, 0);
 
-    return costo;
+    return total;
   };
 
   //Control de cantidades compradas por id
@@ -64,7 +62,7 @@ const ComponentesParaContexto = ({ children }) => {
     return prd?.quantity;
   };
 
-  let datos = {
+  let data = {
     carro,
     AgregarAlCarro,
     limpiarCarro,
@@ -74,7 +72,7 @@ const ComponentesParaContexto = ({ children }) => {
     cantidadesPorId,
   };
 
-  return <CartContext.Provider value={datos}>{children}</CartContext.Provider>;
+  return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
 };
 
 export default ComponentesParaContexto;

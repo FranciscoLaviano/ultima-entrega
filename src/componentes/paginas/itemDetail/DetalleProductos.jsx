@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getDoc, collection, doc } from "firebase/firestore";
-import { db } from "../../../firebaseconfig";
+import { db } from "../../../firebaseConfig";
 import Detalles from "./Detalles";
 import { CartContext } from "../../../contexto/CartContext";
 
@@ -24,6 +24,7 @@ const DetalleProductos = () => {
       ...product,
       quantity: c,
     };
+    console.log(data);
     AgregarAlCarro(data);
 
     toast.success("Producto agregado", {
@@ -45,6 +46,7 @@ const DetalleProductos = () => {
         AgregarAlCarro={ac}
         cantidadEnCarro={productosDelCarro}
       />
+
       <ToastContainer />
     </>
   );

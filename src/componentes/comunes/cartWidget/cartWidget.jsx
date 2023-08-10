@@ -6,11 +6,11 @@ import { CartContext } from "../../../contexto/CartContext";
 
 const cartWidget = () => {
   const { cantidadTotal } = useContext(CartContext);
-  let g = cantidadTotal();
+  let total = cantidadTotal();
 
   return (
     <Link to="/carro" style={{ color: "green" }}>
-      <Badge badgeContent={g} color="primary" showZero>
+      <Badge badgeContent={total} color="primary" showZero>
         <ShoppingCartCheckoutOutlinedIcon color="main" sx={{ fontSize: 45 }} />
       </Badge>
     </Link>
