@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../contexto/CartContext";
-//import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
