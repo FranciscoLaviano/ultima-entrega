@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 
-const Contador = (cuenta, setCuenta, aC, stock) => {
+const Contador = ({ cuenta, setCuenta, aC, stock }) => {
   return (
     <div>
       <div style={{ display: "flex" }}>

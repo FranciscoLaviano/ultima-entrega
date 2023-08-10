@@ -29,7 +29,7 @@ const CheckoutContainer = () => {
     // AXIOS.POST("dasdasdas", userData)
     let order = {
       buyer: userData,
-      items: cart,
+      items: carro,
       total,
       date: serverTimestamp(),
     };
